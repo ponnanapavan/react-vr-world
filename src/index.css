@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components{
+    .primary-btn{
+        @apply bg-gradient-to-r from-primary to-secondary duration-300 py-2 px-6 text-white rounded-full hover:scale-105
+    }
+}
+
+.animated-wrapper{
+animation-name: move-wrapper;
+animation-duration: 25s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+
+
+}
+@keyframes move-wrapper {
+0%{
+    transform:translate(150%, 30%) rotate(0) scale(0.8);
+}
+50%{
+    transform:translate(60vw, 0vh) rotate(150deg) scale(1.2);
+}
+to{
+    transform:translate(40vw, 40vh) rotate(0deg) scale(0.8);
+}
+}
+/*At 0% of the animation duration, the element is translated 150% horizontally and 30% vertically from its original position, rotated 0 degrees, and scaled down to 80% of its original size.
+At 50% of the animation duration, the element is translated 60vw (60% of the viewport width) horizontally and 0vh (0% of the viewport height) vertically, rotated 150 degrees, and scaled up to 120% of its original size.
+At the end of the animation duration (to), the element is translated 40vw horizontally and 40vh vertically, rotated back to 0 degrees, and scaled down to 80% of its original size.*/
